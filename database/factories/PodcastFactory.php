@@ -5,9 +5,9 @@ namespace Database\Factories;
 use App\Models\Podcast;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BookFactory extends Factory
+class PodcastFactory extends Factory
 {
-    protected $model = Book::class;
+    protected $model = Podcast::class;
     public function definition()
     {
         return [

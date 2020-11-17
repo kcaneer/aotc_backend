@@ -2,8 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-use App\Http\Controllers\BookController;
-use App\Models\Book;
+use App\Http\Controllers\PodcastController;
+use App\Models\Podcast;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +23,11 @@ use App\Models\Book;
 //4.update a single(PUT/PATCH) /books/{id}
 //5.delete a single(DELETE) /books/{id}
 
-$router->get('/books', 'BookController@index');
-$router->post('/createbook', 'BookController@create');
-$router->get('/readbook/{id}', 'BookController@read');
-$router->put('/updatebook/{id}', 'BookController@update');
-$router->delete('/deletebook/{id}', 'BookController@deletebook');
+$router->get('/podcasts', 'PodcastController@index');
+// $router->post('/createbook', 'BookController@create');
+// $router->get('/readbook/{id}', 'BookController@read');
+// $router->put('/updatebook/{id}', 'BookController@update');
+// $router->delete('/deletebook/{id}', 'BookController@deletebook');
 
 
 //to create a book
