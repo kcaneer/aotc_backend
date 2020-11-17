@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class Book extends Model
+class Podcast extends Model
 {
     use HasFactory;
     protected $table = 'books';
@@ -14,16 +14,11 @@ class Book extends Model
     public $incrementing = true;
     public $timestamps = true;
     protected $fillable = [
-        'id',
         'title',
-        'excerpt',
-        'isbn',
-        'pages',
-        'cost',
-        'value',
+        'info',
+        'length',
         'released',
-        'create_at',
-        'updated_at'
+        'creator',
     ];
             
 }
