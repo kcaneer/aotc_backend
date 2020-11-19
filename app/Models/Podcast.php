@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Podcast extends Model
 {
     use HasFactory;
-    protected $table = 'books';
+    protected $table = 'podcasts';
     protected $primaryKey = 'id';
     public $incrementing = true;
     public $timestamps = true;

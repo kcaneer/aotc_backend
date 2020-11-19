@@ -51,4 +51,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// $router->post('/register', 'UsersController@register');
+
+$router->post('/register', 'UsersController@register');

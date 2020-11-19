@@ -88,6 +88,9 @@ $app->register(Laravel\Passport\PassportServiceProvider::class);
 $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 
 
+$app->middleware([
+    App\Http\Middleware\CorsMiddleware::class
+]);
 
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class

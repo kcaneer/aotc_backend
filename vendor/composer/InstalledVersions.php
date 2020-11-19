@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '46ad8eface7ec4acd31cd07c706e0d95b30a7832',
     'name' => 'laravel/lumen',
   ),
   'versions' => 
@@ -443,12 +443,12 @@ private static $installed = array (
     ),
     'laravel/lumen' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '46ad8eface7ec4acd31cd07c706e0d95b30a7832',
     ),
     'laravel/lumen-framework' => 
     array (
