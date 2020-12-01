@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
-class UsersController extends Controller
-{
-
+class UsersController extends Controller{
 
     public function register(Request $request)
     {
@@ -36,4 +35,10 @@ class UsersController extends Controller
 
         return response(['data' => $data, 'message' => 'Account created successfully!', 'status' => true]);
     }
+    
+    public function getInfo(Request $request){
+        $user = DB::table('users')->get();
+        return $user;
+    }
+
 }

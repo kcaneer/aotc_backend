@@ -1,10 +1,9 @@
 <?php
 
 /** @var \Laravel\Lumen\Routing\Router $router */
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\PodcastController;
 use App\Models\Podcast;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -51,5 +50,10 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+// $router->get('/dashboard', 'UsersController@getInfo');
 
+$router->get('/api/user', function (Request $request) {
+    $user = $request->user();
+    return $user->toArray();
+});
 $router->post('/register', 'UsersController@register');
