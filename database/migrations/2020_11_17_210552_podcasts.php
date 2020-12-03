@@ -14,13 +14,13 @@ class Podcasts extends Migration
     public function up()
     {
         Schema::create('podcasts', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->text('title');
             $table->text('info');
             $table->integer('length');
-            $table->datetime('released');
+            $table->integer('released');
             $table->text('creator');
-            $table->timestamps();
+            $table->text('genre');
         });
     }
     /**

@@ -14,8 +14,9 @@ class WantToListen extends Migration
     public function up()
     {
         Schema::create('listen', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('podcast_id');
+            $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('podcast_id')->constrained();
             $table->boolean('listened');
             $table->timestamps();
         });

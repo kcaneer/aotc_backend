@@ -14,7 +14,7 @@ class Creators extends Migration
     public function up()
     {
         Schema::create('creators', function (Blueprint $table) {
-            $table->bigInteger('creator_id');
+            $table->id();
             $table->text('name');
         });
     }

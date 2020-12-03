@@ -12,7 +12,6 @@ class UsersController extends Controller{
 
     public function register(Request $request)
     {
-
         //return response(['data' => $request->toArray(), 'message' => 'Account created successfully!', 'status' => true]);
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -39,6 +38,14 @@ class UsersController extends Controller{
     public function getInfo(Request $request){
         $user = DB::table('users')->get();
         return $user;
+    }
+
+    public function logout(Request $request){
+        $request->user()->token()->revoke();
+        $request->user()->token()->delete();
+
+        $response = 'You have been successfully logged out!';
+        return response($response, 200);
     }
 
 }

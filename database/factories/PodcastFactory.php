@@ -13,7 +13,7 @@ class PodcastFactory extends Factory
         return [
             'title' => $this->faker->title,
             'info' => $this->faker->text,
-            'length'=>$this->faker->numberBetween(10, 120) . "minutes",
+            'length'=>$this->faker->numberBetween(10, 120),
             'released' => $this->faker->dateTime(),
             'creator' => $this->faker->name,
         ];

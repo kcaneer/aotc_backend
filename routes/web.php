@@ -53,7 +53,17 @@ $router->get('/', function () use ($router) {
 // $router->get('/dashboard', 'UsersController@getInfo');
 
 $router->get('/api/user', function (Request $request) {
-    $user = $request->user();
-    return $user->toArray();
+    $user = $request->user()->toArray();
+    return $user;
 });
+$router->get('/podcasts', 'PodcastController@index');
+
+$router->post('/want', 'PodcastController@want');
+
+$router->post('/listened', 'PodcastController@listened');
+
 $router->post('/register', 'UsersController@register');
+
+$router->get('/logout', 'UsersController@logout');
+
+

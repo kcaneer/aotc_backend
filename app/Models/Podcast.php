@@ -20,5 +20,8 @@ class Podcast extends Model
         'released',
         'creator',
     ];
-            
+    public function listens()
+    {
+        return $this->hasMany('App\Models\Listen', 'podcast_id');
+    }      
 }
