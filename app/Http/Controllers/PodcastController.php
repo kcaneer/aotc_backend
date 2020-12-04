@@ -39,18 +39,6 @@ class PodcastController extends Controller
         return $podcast;
     }
 
-    public function want(Request $request)
-    {
-        //1 true means listened, 0 false means  want to listen
-        $user = $request->user;
-        $listen = new Listen;
-        $listen->user_id = request('user_id');
-        $listen->podcast_id = request('podcast_id');
-        $listen->listened = false;
-        $listen->save();
-        return Podcast::with('listens')->get();
-    }
-
     public function listened(Request $request)
     {
         //true means listened, false means  want to listen
@@ -62,6 +50,17 @@ class PodcastController extends Controller
         ]);
         return Podcast::with('listens')->get();
     }
+    public function want(Request $request)
+    {
+        //true means listened, false means  want to listen
+        $listen = Listen::updateOrCreate([
+            'user_id' => request('user_id'),
+            'podcast_id' => request('podcast_id')
+        ], [
+            'listened' => false
+        ]);
+        return Podcast::with('listens')->get();
+    }
 
 
     public function deletepodcast(Request $request)
@@ -70,7 +69,17 @@ class PodcastController extends Controller
         podcast::find($request['id'])->delete();
     }
 
-    public function listen(Request $request)
+    public function listenedPodcasts(Request $request)
     {
+        $user = $request->user();
+        $l = $user->listenedPodcasts()->get();
+        return $l->toArray();
+    }
+    
+    public function wantedPodcasts(Request $request)
+    {
+        $user = $request->user();
+        $l = $user->wantedPodcasts()->get();
+        return $l->toArray();
     }
 }

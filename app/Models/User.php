@@ -31,4 +31,11 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
+
+    public function listenedPodcasts(){
+        return $this->hasMany('App\Models\Listen', 'user_id')->where('listened', 1);
+    }
+    public function wantedPodcasts(){
+        return $this->hasMany('App\Models\Listen', 'user_id')->where('listened', 0);
+    }
 }

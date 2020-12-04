@@ -66,4 +66,6 @@ $router->post('/register', 'UsersController@register');
 
 $router->get('/logout', 'UsersController@logout');
 
+$router->get('/listenedpodcasts', 'PodcastController@listenedPodcasts');
 
+$router->get('/wantedpodcasts', 'PodcastController@wantedPodcasts');

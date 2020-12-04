@@ -20,7 +20,7 @@ class Listen extends Model
         'podcast_id'
     ];
 
-    protected $with = ['user'];
+    protected $with = ['user', 'podcast'];
 
     public function user()
     {
