@@ -19,6 +19,7 @@ return array(
     'App\\Jobs\\ExampleJob' => $baseDir . '/app/Jobs/ExampleJob.php',
     'App\\Jobs\\Job' => $baseDir . '/app/Jobs/Job.php',
     'App\\Listeners\\ExampleListener' => $baseDir . '/app/Listeners/ExampleListener.php',
+    'App\\Models\\Listen' => $baseDir . '/app/Models/Listen.php',
     'App\\Models\\Podcast' => $baseDir . '/app/Models/Podcast.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
